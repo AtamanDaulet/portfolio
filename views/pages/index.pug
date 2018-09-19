@@ -1,8 +1,24 @@
 extends ../main.layout.pug
 
 block variables
-  - var title = 'Главная страница'
+  - var title = "welcome"
+  - var name = "Daulet Atambayev"
+  - var footer = "© Daulet Atambayev | created with love in LoftSchool | 2018"
 
 block content
-  h1 Главная страница
-  .block
+  section.section.section__welcome
+    .welcome(style="background: url(../../images/bg/hero.jpg) no-repeat")
+      header.welcome__header  
+        button.btn_auth Log in
+      .welcome__content 
+        .welcome__avatar
+        h3.welcome__name #{name}
+        .welcome__title The personal site of the web developer
+        .welcome__social
+        .welcome__footer
+          button.btn.btn-work
+          button.btn.btn-about
+          button.btn.btn-blog
+
+      footer.footer-containe #{footer}
+    

@@ -1,0 +1,63 @@
+.section__welcome{
+    display: flex;
+    justify-content: center;
+};
+
+.welcome {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 1200px;
+    position: relative;
+};
+
+.welcome__header{
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 90px;
+    width: 100%;
+};
+
+.btn_auth{
+    height: 45px;
+    width: 180px;
+    margin-top: 25px;
+    margin-right: 20px;
+    border: 2px solid $white ;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    background: transparent;
+    color: $white ;
+    @include roboto($style: 'medium');
+};
+
+.welcome__content{
+    display: flex;
+    width: 380px;
+    height: 395px;
+    background: $white;
+    opacity: 0.851;
+    border-radius: 5px;
+};
+
+//footer
+
+.footer-containe{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 50px;
+    text-align: center;
+    color: $white;
+    @include roboto($style: 'light');
+};
+
+  
