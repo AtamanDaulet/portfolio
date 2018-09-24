@@ -10,14 +10,16 @@ const webpackConfig = require("./webpack.config.js");
 const moduleImporter = require("sass-module-importer");
 const del = require("del");
 
-const SRC_DIR = "src";
-const DIST_DIR = "public";
-const ROOT_PATH = `./${DIST_DIR}`;
+const SRC_DIR = "./src";
+const DIST_DIR = "./public";
+const ROOT_PATH = `${DIST_DIR}`;
+const VIEWS_DIR = "./views";
 
 // стили
 gulp.task("styles", () => {
   return gulp
     .src(`${SRC_DIR}/styles/main.scss`)
+    .pipe($gp.sourcemaps.init())
     .pipe($gp.plumber())
     .pipe($gp.sassGlob())
     .pipe($gp.sourcemaps.init())
@@ -41,7 +43,9 @@ gulp.task("styles", () => {
 
 // переносим шрифты
 gulp.task("fonts", () => {
-  return gulp.src(`${SRC_DIR}/fonts/**`).pipe(gulp.dest(`${DIST_DIR}/fonts/`));
+  return gulp
+  .src(`${SRC_DIR}/fonts/**`)
+  .pipe(gulp.dest(`${DIST_DIR}/fonts/`));
 });
 
 // очистка
@@ -75,6 +79,17 @@ gulp.task("nodemon", done => {
     });
 });
 
+//рендерим странички
+gulp.task("pug", () => {
+  return gulp
+    .src(`${VIEWS_DIR}/pages/*.pug`)
+    .pipe($gp.plumber())
+    .pipe($gp.pug())
+    .pipe(gulp.dest(`${DIST_DIR}`))
+    .pipe(reload({ stream: true }));
+});
+
+
 // dev сервер + livereload (встроенный)
 gulp.task(
   "server",
@@ -84,6 +99,7 @@ gulp.task(
       port: 8080,
       open: false
     });
+    done();
   })
 );
 
@@ -127,11 +143,11 @@ gulp.task("svg", done => {
     )
     .pipe(gulp.dest(`${DIST_DIR}/images/icons`));
 
-  prettySvgs().pipe(
-    $gp.sassInlineSvg({
-      destDir: `${SRC_DIR}/styles/icons/`
-    })
-  );
+  // prettySvgs().pipe(
+  //   $gp.sassInlineSvg({
+  //     destDir: `${SRC_DIR}/styles/icons/`
+  //   })
+  // );
 
   done();
 });
@@ -139,7 +155,9 @@ gulp.task("svg", done => {
 // просто переносим картинки
 gulp.task("images", () => {
   return gulp
-    .src([`${SRC_DIR}/images/**/*.*`, `!${SRC_DIR}/images/icons/*.*`])
+    .src([
+      `${SRC_DIR}/images/**/*.*`,
+     `!${SRC_DIR}/images/icons/*.*`])
     .pipe(gulp.dest(`${DIST_DIR}/images/`));
 });
 
@@ -149,15 +167,27 @@ gulp.task("watch", () => {
   gulp.watch(`${SRC_DIR}/images/**/*.*`, gulp.series("images"));
   gulp.watch(`${SRC_DIR}/scripts/**/*.js`, gulp.series("scripts"));
   gulp.watch(`${SRC_DIR}/fonts/*`, gulp.series("fonts"));
-  gulp.watch(`views/pages/*`).on('change', reload);
+  gulp.watch(`${VIEWS_DIR}/pages/*.pug`, gulp.series("pug"));
 });
+
 
 // GULP:RUN
 gulp.task(
   "default",
   gulp.series(
     "clean",
-    gulp.parallel("styles", "images", "fonts", "scripts", "svg"),
+    "svg",
+    gulp.parallel("styles","pug", "images", "fonts", "scripts"),
     gulp.parallel("watch", "server")
   )
 );
+
+// //GULP:build
+// gulp.task(
+//   "build",
+//   gulp.series(
+//     "clean",
+//     "svg",
+//     gulp.parallel("styles", "pug", "images", "fonts", "scripts")
+//   )
+// );

@@ -12,4 +12,8 @@ $light-grey: #dfdcd5;
 @import './icons/_sass-inline-svg.scss';
 @import './icons/_sass-inline-svg-data.scss';
 
-@import './blocks/**/*';
+@import './blocks/index.scss';
+@import './blocks/menu.scss';
+@import './blocks/slider.scss';
+@import './blocks/my-work.scss';
+//@import './blocks/**/*';

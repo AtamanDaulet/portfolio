@@ -1,24 +1,34 @@
-extends ../main.layout.pug
+extends ../auth.layout.pug
 
 block variables
   - var title = "welcome"
   - var name = "Daulet Atambayev"
   - var footer = "© Daulet Atambayev | created with love in LoftSchool | 2018"
+  - var vkLink = "https://vk.com/atamandaulet "
+  - var githubLink = "https://github.com/AtamanDaulet"
+  - var inLink = "https://www.linkedin.com/in/daulet-atambaev-04a38a131"
+  - var myWorks = "./my-works.html"
+  - var aboutMe = "./about.html"
+  - var blog = "./blog.html"
+
 
 block content
-  section.section.section__welcome
-    .welcome(style="background: url(../../images/bg/hero.jpg) no-repeat")
+  section.section.section__welcome(style="background: url(../../images/bg/hero.jpg) no-repeat")
+    .welcome
       header.welcome__header  
         button.btn_auth Log in
       .welcome__content 
-        .welcome__avatar
-        h3.welcome__name #{name}
+        +image("content/user.jpg", "user", "welcome__avatar")
+        h2.welcome__name #{name}
         .welcome__title The personal site of the web developer
-        .welcome__social
+        .welcome__social          
+          +iconLink( vkLink, "vk", "welcome__vk")
+          +iconLink( githubLink,"github", "welcome__github")
+          +iconLink( inLink, "in", "welcome__in")
         .welcome__footer
-          button.btn.btn-work
-          button.btn.btn-about
-          button.btn.btn-blog
+          a.welcome__link.btn-work(href= myWorks) My works
+          a.welcome__link.btn-about(href= aboutMe) About me
+          a.welcome__link.btn-blog(href= blog) Blog
 
       footer.footer-containe #{footer}
     

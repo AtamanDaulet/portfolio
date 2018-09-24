@@ -36,17 +36,110 @@
     background: transparent;
     color: $white ;
     @include roboto($style: 'medium');
+    cursor: pointer;
+};
+
+.btn_auth:hover{
+    background-color: $white;
+    color: $green;
 };
 
 .welcome__content{
     display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
     width: 380px;
     height: 395px;
     background: $white;
     opacity: 0.851;
     border-radius: 5px;
+    position: relative;
 };
 
+.welcome__avatar{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    margin-bottom: 20px;
+};
+
+.welcome__name{
+    @include roboto($style: 'medium');   
+    font-size: 28px;
+    margin-bottom: 5px;
+};
+
+.welcome__title{
+    margin-bottom: 20px;
+    opacity: 0.8;
+};
+
+.welcome__social{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    margin-bottom: 20px;
+};
+
+.welcome__vk, .welcome__github, .welcome__in{
+    width: 30px;
+    height: 30px;
+    fill: $green;
+    margin: 0px 15px;
+    opacity: 0.5;
+};
+
+.welcome__vk:hover ,
+.welcome__github:hover ,
+.welcome__in:hover{
+    opacity: 1;
+};
+
+.welcome__footer{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 45px;
+    width: 100%;
+    display: flex;
+};
+
+.welcome__link{
+    height: 100%;
+    background-color:  $green;
+    text-decoration: none;
+    color: $white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+};
+
+.welcome__link:hover{
+    background-color: rgb(0, 150, 136); 
+};
+
+.btn-work{
+    width: 40%;
+};
+
+.btn-about{
+    width: 35%;
+    border-right: 2px solid #6f889a;
+    border-left: 2px solid #6f889a;
+};
+
+.btn-blog{
+    width: 25%;
+};
+
+  
 //footer
 
 .footer-containe{
