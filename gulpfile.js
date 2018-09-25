@@ -9,6 +9,7 @@ const webpack = require("webpack");
 const webpackConfig = require("./webpack.config.js");
 const moduleImporter = require("sass-module-importer");
 const del = require("del");
+const fs = require("fs");
 
 const SRC_DIR = "./src";
 const DIST_DIR = "./public";
@@ -84,7 +85,9 @@ gulp.task("pug", () => {
   return gulp
     .src(`${VIEWS_DIR}/pages/*.pug`)
     .pipe($gp.plumber())
-    .pipe($gp.pug())
+    .pipe($gp.pug({
+      locals: JSON.parse(fs.readFileSync("./content.json"))
+    }))
     .pipe(gulp.dest(`${DIST_DIR}`))
     .pipe(reload({ stream: true }));
 });

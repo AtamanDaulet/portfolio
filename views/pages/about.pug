@@ -2,52 +2,47 @@ extends ../main.layout.pug
 
 block variables
   - var title = 'About'
-  - var name = "Daulet Atambayev"
-  - var footer = "© Daulet Atambayev | created with love in LoftSchool | 2018"
-  - var vkLink = "https://vk.com/atamandaulet "
-  - var githubLink = "https://github.com/AtamanDaulet"
-  - var inLink = "https://www.linkedin.com/in/daulet-atambaev-04a38a131"
-  - var myWorks = "./my-works.html"
-  - var aboutMe = "./about.html"
-  - var blog = "./blog.html"
+  
 
 block content
   section.hero
-    .hero__lists
-
-      //- include ../common/socials.pug      
-
-    .hero__menu.hamburger
-      
-
-
-    .hero__container
-      .section-title
-      .user
-        .user__avatar +image("content/user.jpg", "user", "welcome__avatar")
-        .user__info
-          .user__name #{name}
-          .user__desc The personal site of the web developer
-
-    .hero__btn
-      .arrow__down
-
+    .wrapper-inner.wrapper-inner-relative
+      .hero__lists
+        +iconLink( vkLink, "vk", "hero__vk")
+        +iconLink( githubLink,"github", "hero__github")
+        +iconLink( inLink, "in", "hero__in")   
+      .hero__menu
+        .hamburger
+          +icon("hamburger", "hamburger_menu")
+      .hero__container
+        //.section-title
+        .user
+          .user__avatar 
+          +image("content/user.jpg", "user", "user__avatar_pic")
+          .user__info
+            .user__name #{name}
+            .user__desc The personal site of the web developer
+      .hero__btn
+        .arrow__down
+          +icon("arrow_down", "arrow__down_pic")
   section.about
     .about__col.about__col_bg_white
       .about__triangle
-        svg.svg-triangle.svg-triangle_fill_white
-          //- polygom()
+        +icon("about_bg_left", "about_bg_left_pic")       
 
       .about__title
-        h2.title About me
+        +icon("about_header", "about_header_pic")
+        h1.about__title_text About me
+          
       .user-desc
         .user-desc__pic
           img(src="", alt="").user-desc__pic-elem
         
     .about__col.about__col_bg_beige
       .about__triangle
-        svg.svg-triangle.svg-triangle_fill_beige
-          polygom()
+        +icon("about_bg_right", "about_bg_right_pic")
+        //- svg.svg-triangle.svg-triangle_fill_beige
+        //-   polygom()
 
       .about__right-title
         .subtitle that I can be of use to you
@@ -93,7 +88,7 @@ block content
                 .contacts-cell  
                   .contacts-cell__icon
                   .contacts-cell__title #{item}
-
+  include ../common/footer.pug
               
                        
             
