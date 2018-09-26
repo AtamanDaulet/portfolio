@@ -8,16 +8,17 @@
 };
 .about__triangle{
     position: absolute;
-    top: -350px;
+    top: -220px;
     width: 100%;
-    height: 100%;
-    z-index: 3;
+    height: 220px;
+    z-index: 3;    
 }
 .about_bg_left_pic{
     width: 100%;
     height: 100%;
     fill: $white;
 }
+
 .about_bg_right_pic{
     width: 100%;
     height: 100%;
@@ -29,8 +30,11 @@
     justify-content: center;
     color: $grey;
     z-index: 10;
-    position: relative;
+    position: absolute;
+    top: -150px;
+    width: 100%;
 };
+
 .about__title_text{
     @include bernier();
     font-size: 63px;
@@ -45,8 +49,48 @@
     -ms-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
 };
+
+@include title-dash(".about__title_text");
+
 .about_header_pic{
     width: 380px;
     opacity: 0.1;
     z-index: 10;
+};
+
+.user-desc{
+    height: 750px;
+    background: $white;
+};
+.user-desc__pic{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 410px;
+    padding-top: 20px;    
+    margin-bottom: 25px;
+};
+.user-desc__pic-elem{
+    display: flex;
+}
+.user-desc__title{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-size: 35px;
+    @include bernier();
+    color: $grey;
+    margin-bottom: 25px;
+}  
+.user-desc__title-text{
+    position: relative;
+}
+@include title-dash(".user-desc__title-text");
+
+.user-desc__content{
+    display: flex;
+    justify-content: center;
+};
+.user-desc__content-text{
+    width: 70%;
 };
