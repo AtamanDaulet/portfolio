@@ -15,7 +15,6 @@ block content
         .hamburger
           +icon("hamburger", "hamburger_menu")
       .hero__container
-        //.section-title
         .user
           .user__avatar 
           +image("content/user.jpg", "user", "user__avatar_pic")
@@ -49,9 +48,9 @@ block content
           use(xlink:href="/images/about/about_bg_right.svg#about_bg_right")
 
       .about__right-title
-        .subtitle that I can be of use to you
+        h1.about__right-title_text What can I do for you
       .about__small-decs
-        p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error libero blanditiis, voluptates ea est, aliquam quos quae iste inventore dolores odit consectetur dolorem laborum repellat sed quas rem! Laudantium, ex.
+        p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
       .about__container
         ul.skills
           -
@@ -79,26 +78,30 @@ block content
                       svg.skill #{skill}
                       
   section.contacts
-    .contacts__underlay
-      .google-map
+    .contacts__underlay.google-map      
     .contacts__container
       .user-data    
-        .user-data-title
-          .subtitle
-        .user-data__container
-          ul.user-contacts-list
-            each item in ["skype", "mail", "phone"]
-              li.user-contacts-list__item
-                .contacts-cell  
-                  .contacts-cell__icon
-                  .contacts-cell__title #{item}
-  include ../common/footer.pug
-              
-                       
-            
-           
-        
+        .user-data-title Contacts          
+      .user-data__container
+        ul.user-contacts-list
+          li.user-contacts-list__item
+            .contacts-cell
+              +icon("skype", "contacts-cell__icon") 
+              .contacts-cell__title #{skype}
+          li.user-contacts-list__item
+            a(href="mailto: `#{gmail}`" class="contacts-cell")
+              +icon("envelope", "contacts-cell__icon") 
+              .contacts-cell__title #{gmail}
+          li.user-contacts-list__item
+            a(href="tel:+`#{phone}`" class="contacts-cell")
+              +icon("phone", "contacts-cell__icon") 
+              .contacts-cell__title +1.512.543.6421
+          li.user-contacts-list__item
+            .contacts-cell
+              +icon("map_marker", "contacts-cell__icon") 
+              .contacts-cell__title #{city}
 
+   
 
 block scripts
   script(src='/scripts/main.bundle.js')

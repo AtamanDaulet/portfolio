@@ -9,4 +9,9 @@ mixin iconLink(iconLink, iconName, iconClass)
   a(href=`${iconLink}` target="_blank")
     svg(class=`${iconClass}`)
       use(xlink:href=`/images/icons/sprite.svg#${iconName}`)
-      
+
+mixin socials(mod)
+  div(class="socials socials__"+mod)
+    +iconLink( vkLink, "vk_round", `${mod}`+"__vk")
+    +iconLink( githubLink,"github_round", `${mod}`+"__github")
+    +iconLink( inLink, "in_round", `${mod}`+"__in")

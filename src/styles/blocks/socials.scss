@@ -1,0 +1,20 @@
+.socials__footer_mod{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+};
+
+.footer_mod__vk, .footer_mod__github, .footer_mod__in{
+    width: 35px;
+    height: 35px;
+    fill: $white;
+    margin: 0px 8px;
+    opacity: 0.3;
+};
+
+.footer_mod__vk:hover ,
+.footer_mod__github:hover ,
+.footer_mod__in:hover{
+    opacity: 1;
+};

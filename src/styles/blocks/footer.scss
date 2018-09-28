@@ -1,0 +1,53 @@
+.footer{
+    display: flex;
+    flex-flow: column nowrap;
+    background: $grey;
+    @include roboto($style: 'light');
+}
+.footer__row{
+    display: flex;
+    justify-content: center;  
+    height: 75px;
+}
+.footer__col{
+    display: flex;
+    flex: 1;
+    margin: 0px 30px;
+}
+.footer__row_border_top{
+    border-top: 1px solid $white;
+    opacity: 0.3;
+    color: $white;
+}
+.wrapper-inner_flex_row{
+    display: flex;
+    flex-flow: row nowrap;
+}
+.footer__menu_center{
+    display: flex;
+    align-items: center;
+
+}
+.footer__menu_list{
+    display: flex;
+    flex-flow: row nowrap;
+}
+.footer__menu_link{
+    display: flex;
+    color: $white;
+    margin-right: 40px;
+    @include roboto($style: 'medium');
+}
+.footer__col_justify_right{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+@import "./socials.scss";
+
+.copyright, .copyright_right{
+    display: flex;
+    align-items: center;
+}
+
+  

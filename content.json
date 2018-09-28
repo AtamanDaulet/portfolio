@@ -7,5 +7,9 @@
     "myWorks" : "./my-works.html",
     "aboutMe" : "./about.html",
     "blog" : "./blog.html",
-    "footer__copyright" : "Я веб-разработчик из Austin, и этот сайт я сделал в рамка обучения в Школе онлайн образования LoftSchool"
+    "footer__copyright" : "Я веб-разработчик из Austin, и этот сайт я сделал в рамка обучения в Школе онлайн образования LoftSchool",
+    "skype" : "Daulet Ataman",
+    "gmail" : "atamandaulet@gmail.com",
+    "phone" : "15125436421",
+    "city": "Austin, TX 78758"
 }
