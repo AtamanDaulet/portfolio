@@ -1,9 +1,11 @@
 .about{
     display: flex;
     height: 750px;
+    width: 100vw;
 }
 .about__col{
-    flex: 1;    
+    display: flex;
+    flex: 1;
     position: relative;
 };
 .about__triangle{
@@ -124,7 +126,6 @@
 @include title-dash(".about__right-title_text");
 
 .about__col_bg_beige{
-    height: 750px;
     background: $beige;
 }
 .about__small-decs{
@@ -148,6 +149,7 @@
     flex-flow: row nowrap;
 };
 .skills-row__item{
+    display: flex;
     height: 110px;
     width: 110px;
     margin-right: 35px;

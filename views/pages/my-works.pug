@@ -4,9 +4,28 @@ block variables
   - var title = 'my works'
 
 block content
-  h1 my works ytjtyj hs
-  include ../common/slider.pug
-  
+  .portfolio_header_overlay
+    +icon("portfolio_header", "portfolio_header-svg")
+  include ../common/hero.pug
+    
+  include ../common/hero-triangle.pug
+  .hero__title
+    .hero__title-bg
+      +icon("works_header", "works_header-svg")
+      .hero__title_text  
+        p My works
+  section.section.works
+      include ../common/slider.pug
+  section.section.feed
+    .feed__title
+      +icon("about_header", "feed__title_svg")
+      .hero__title_text  
+        p What they say about me
+    .feed__content
+      .feed__content_list
+        .feed__content_item
+        .feed__content_item
+    .feed__form
 
 block scripts
   script(src='/scripts/main.bundle.js')

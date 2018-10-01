@@ -1,0 +1,32 @@
+.hero__title{
+    position: absolute;
+    left: 50%;
+    top: 680px;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    z-index: 5;
+    width: 500px;
+    height: 165px;
+}
+.works_header-svg{
+    width: 100%;
+    height: 100%;
+    fill: $light-grey;
+}
+.hero__title_text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 6;
+    @include bernier();
+    font-size: 63px;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+@include title-dash(".hero__title_text");

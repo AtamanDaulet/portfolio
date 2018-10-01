@@ -37,6 +37,8 @@
     color: $white;
     margin-right: 40px;
     @include roboto($style: 'medium');
+    cursor: pointer;
+    text-decoration: none;
 }
 .footer__col_justify_right{
     display: flex;

@@ -1,6 +1,7 @@
 $white: #efeee9;
 $beige: #eeebdf;
 $green: #16c2aa;
+$green-hover: #009688;
 $text-color: #455a64;
 $grey: #373e42;
 $light-grey: #dfdcd5;
@@ -15,10 +16,12 @@ $light-grey: #dfdcd5;
 
 @import './blocks/index.scss';
 @import './blocks/menu.scss';
-@import './blocks/slider.scss';
 @import './blocks/my-work.scss';
-@import './blocks/about-hero.scss';
+@import './blocks/hero.scss';
 @import './blocks/about.scss';
 @import './blocks/contacts.scss';
 @import './blocks/footer.scss';
-//@import './blocks/**/*';
+@import './blocks/hero-triangle.scss';
+@import './blocks/hero-title.scss';
+@import './blocks/slider.scss';
+@import './blocks/feed.scss';

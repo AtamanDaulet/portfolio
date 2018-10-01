@@ -7,7 +7,7 @@
     justify-content: center;
     background: url("../../images/bg/hero.jpg") no-repeat;
     background-size: cover;
-    height: 620px;
+    height: 785px;
 };
 .wrapper-inner-relative{
     position: relative;
@@ -81,9 +81,10 @@
 };
 .hero__btn{
     position: absolute;
-    top: 450px;
+    top: 500px;
     left: calc(50% - 10px);
     z-index: 5;
+    cursor: pointer;
 };
 .arrow__down_pic{
     width: 20px;
