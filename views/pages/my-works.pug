@@ -24,8 +24,37 @@ block content
     .feed__content
       .feed__content_list
         .feed__content_item
+          .feed__item_quotes “
+          .feed__item_text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+          .feed__item_author
+            .feed__author_icon
+              +image("content/feed/kovalchuk.jpg", "author_icon", "feed__author_icon-pic")
+            .feed__author_title 
+              .feed__author_name Ковальчук Дмитрий
+              p основатель Loftschool
         .feed__content_item
+          .feed__item_quotes “
+          .feed__item_text Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+          .feed__item_author
+            .feed__author_icon
+              +image("content/feed/cabantsev.jpg", "author_icon", "feed__author_icon-pic")
+            .feed__author_title 
+              .feed__author_name Сабанцев Владимир
+              p преподаватель Loftschool
     .feed__form
+      form(method="post").feed__form_wrapper  
+       .form__title Связаться со мной
+       .form__author
+        .label
+          .input(type="text" name="form__author_name").form__author_name
+       .form__mail
+        .label
+          .input(type="email" name="form__author_email").form__author_email
+       .form__message
+        .label
+          .input(type="msg" name="form__author_msg").form__author_msg
+
+
 
 block scripts
   script(src='/scripts/main.bundle.js')
