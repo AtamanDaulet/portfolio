@@ -16,7 +16,7 @@ block content
         p My works
   section.section.works
       include ../common/slider.pug
-  section.section.feed
+  section.section.feed.js-blur
     .feed__title
       +icon("about_header", "feed__title_svg")
       .hero__title_text  
@@ -41,19 +41,26 @@ block content
             .feed__author_title 
               .feed__author_name Сабанцев Владимир
               p преподаватель Loftschool
-    .feed__form
-      form(method="post").feed__form_wrapper  
-       .form__title Связаться со мной
-       .form__author
-        .label
-          .input(type="text" name="form__author_name").form__author_name
-       .form__mail
-        .label
-          .input(type="email" name="form__author_email").form__author_email
-       .form__message
-        .label
-          .input(type="msg" name="form__author_msg").form__author_msg
-
+    .feed__form      
+      form(method="post").feed__form_wrapper.js-feedback  
+          .feed__form_bg
+          .form__title 
+            .form__title_text  Contact me
+          .form__author
+            .label
+              input(type="text" name="form__author_name" placeholder="Name").form__author_name
+          .form__mail
+            .label
+              input(type="email" name="form__author_email" placeholder="Email").form__author_email
+          .form__message
+            .label
+              input(type="msg" name="form__author_msg" placeholder="Message").form__author_msg
+          .form__btn.btn
+            .form__send
+              button(type="submit") send
+            .form__clean
+              button(type="reset") clean
+    .work__arrow_up
 
 
 block scripts
