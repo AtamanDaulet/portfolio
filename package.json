@@ -17,6 +17,9 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-0": "^6.24.1",
     "browser-sync": "^2.24.7",
+    "cross-env": "^5.2.0",
+    "css-loader": "^1.0.0",
+    "cssnano": "^4.0.0-rc.2",
     "del": "^3.0.0",
     "eslint": "^4.19.1",
     "eslint-loader": "^2.0.0",
@@ -39,7 +42,6 @@
     "gulp-sourcemaps": "^2.6.4",
     "gulp-svg-sprite": "^1.4.0",
     "gulp-svgmin": "^1.2.4",
-    "gulp-webpack": "^2.0.0",
     "html-webpack-plugin": "^3.2.0",
     "sass-module-importer": "^1.4.0",
     "uglifyjs-webpack-plugin": "^1.2.5",
@@ -56,14 +58,16 @@
     "not ie <= 8"
   ],
   "dependencies": {
+    "ajv": "^6.5.4",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "jquery": "^3.2.1",
     "normalize.css": "^7.0.0",
+    "npm": "^6.4.1",
     "promptly": "^3.0.3",
     "pug": "^2.0.3",
     "request": "^2.87.0",
     "signale": "^1.1.0",
-    "body-parser": "^1.18.2",
-    "express": "^4.16.2",
-    "jquery": "^3.2.1",
     "vue": "^2.5.13"
   }
 }

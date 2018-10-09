@@ -5,6 +5,9 @@ $green-hover: #009688;
 $text-color: #455a64;
 $grey: #373e42;
 $light-grey: #dfdcd5;
+$border-horizontal: rgba(255, 255, 255, .5); 
+$tablet-screen: 750px;
+$mobile-screen: 480px;
 
 @import 'normalize.css';
 @import './layout/fonts.scss';
@@ -26,3 +29,4 @@ $light-grey: #dfdcd5;
 @import './blocks/slider.scss';
 @import './blocks/feed.scss';
 @import './blocks/feed-form.scss';
+@import './blocks/blog.scss';

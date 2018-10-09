@@ -2,7 +2,10 @@ extends ../main.layout.pug
 
 block variables
   - var title = 'my works'
-
+block scripts
+  script(src='./scripts/works.bundle.js') 
+  script(src='./scripts/blur.bundle.js') 
+  
 block content
   .portfolio_header_overlay
     +icon("portfolio_header", "portfolio_header-svg")
@@ -54,14 +57,13 @@ block content
               input(type="email" name="form__author_email" placeholder="Email").form__author_email
           .form__message
             .label
-              input(type="msg" name="form__author_msg" placeholder="Message").form__author_msg
+              textarea(name="form__author_msg", cols="30", rows="10"  placeholder="Message").form__author_msg
           .form__btn.btn
             .form__send
-              button(type="submit") send
+              button(type="submit").form__btn_custom send
             .form__clean
-              button(type="reset") clean
-    .work__arrow_up
+              button(type="reset").form__btn_custom clean
+    button.work__arrow_up
+      .arrow_up__relative
+        +icon("arrow_down", "arrow_up__svg")
 
-
-block scripts
-  script(src='/scripts/main.bundle.js')

@@ -1,12 +1,14 @@
 const gulp = require("gulp");
+const config = require("./env.paths.json");
+const env = process.env.NODE_ENV;
 
 // плагины галпа, объявлять не нужно, используем как $gp.имяПлагина (без приставки gulp-)
 const $gp = require("gulp-load-plugins")();
 
 const browserSync = require("browser-sync").create();
 const reload = browserSync.reload;
+const $webpack = require("webpack-stream");
 const webpack = require("webpack");
-const webpackConfig = require("./webpack.config.js");
 const moduleImporter = require("sass-module-importer");
 const del = require("del");
 const fs = require("fs");
@@ -57,10 +59,18 @@ gulp.task("clean", () => {
 // собираем скрипты webpack
 gulp.task("scripts", () => {
   return gulp
-    .src(`${SRC_DIR}/scripts/main.js`)
+    .src(`${config.SRC_DIR}/scripts/modules/*.js`)
     .pipe($gp.plumber())
-    .pipe($gp.webpack(webpackConfig, webpack))
-    .pipe(gulp.dest(`${DIST_DIR}/scripts`))
+    .pipe(
+      $webpack(
+        {
+          ...require("./webpack.mpa.config"),
+          mode: env
+        },
+        webpack
+      )
+    )
+    .pipe(gulp.dest(`${config.DIST_DIR}/scripts`))
     .pipe(reload({ stream: true }));
 });
 

@@ -5,7 +5,7 @@
 }
 .about__col{
     display: flex;
-    flex: 1;
+    width: 50%;
     position: relative;
 };
 .about__triangle{
@@ -126,6 +126,8 @@
 @include title-dash(".about__right-title_text");
 
 .about__col_bg_beige{
+    display: flex;
+    flex-flow: column nowrap;
     background: $beige;
 }
 .about__small-decs{

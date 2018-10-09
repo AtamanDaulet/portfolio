@@ -2,7 +2,8 @@ extends ../main.layout.pug
 
 block variables
   - var title = 'About'
-  
+block scripts
+  script(src='about.bundle.js')  
 
 block content
   include ../common/hero.pug
@@ -82,9 +83,4 @@ block content
           li.user-contacts-list__item
             .contacts-cell
               +icon("map_marker", "contacts-cell__icon") 
-              .contacts-cell__title #{city}
-
-   
-
-block scripts
-  script(src='/scripts/main.bundle.js')
+              .contacts-cell__title #{city}   
