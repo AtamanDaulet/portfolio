@@ -173,12 +173,21 @@
 }
 .skill__circle_under{
     stroke: $white;
+    stroke-dasharray: 10;
     stroke-opacity: 0.5;
-    stroke-dashoffset: 75%;
+    stroke-dashoffset: 55%;
+    transform: rotate(90deg);
+    transform-origin: 50%;
+    transition: 1s stroke-dashoffset 1s;
+    -webkit-transition: 1s stroke-dashoffset 1s;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
 }
 .skill__circle_above{
     stroke: $green;
-    stroke-dashoffset: 25%;
+    stroke-dashoffset: 85%;
 }
 .skill__title{
     width: 75px;
