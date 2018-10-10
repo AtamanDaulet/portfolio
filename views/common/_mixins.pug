@@ -15,3 +15,9 @@ mixin socials(mod)
     +iconLink( vkLink, "vk_round", `${mod}`+"__vk")
     +iconLink( githubLink,"github_round", `${mod}`+"__github")
     +iconLink( inLink, "in_round", `${mod}`+"__in")
+
+mixin dataJson()
+  - 
+    let path = require('path');
+    let fs = require('fs');
+    let dataJson = JSON.parse(fs.readFileSync("../../data/content.json")));

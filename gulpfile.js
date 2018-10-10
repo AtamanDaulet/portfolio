@@ -96,7 +96,8 @@ gulp.task("pug", () => {
     .src(`${VIEWS_DIR}/pages/*.pug`)
     .pipe($gp.plumber())
     .pipe($gp.pug({
-      locals: JSON.parse(fs.readFileSync("./content.json"))
+      locals: JSON.parse(fs.readFileSync("./data/content.json")
+      )
     }))
     .pipe(gulp.dest(`${DIST_DIR}`))
     .pipe(reload({ stream: true }));

@@ -2,6 +2,22 @@ extends ../main.layout.pug
 
 block variables
   - var title = 'About'
+  -
+    var skills = [
+      { 
+        title:'Frontend',
+        items: ["HTML5", "CSS3", "JavaScript"]
+      },
+      {
+        title:'Backend',
+        items: ["PHP", "mySQL","Node.js & npm", "Mongo.db"]
+      },
+      { 
+        title:'WorkFlow',
+        items: ["Git", "Gulp", "webpack"]
+      }
+    ] 
+
 block scripts
   script(src='about.bundle.js')  
 
@@ -37,29 +53,20 @@ block content
         p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
       .about__container
         ul.skills
-          -
-            var skills = [
-              { 
-                title:'Frontend',
-                items: ["HTML5", "CSS3", "JavaScript"]
-              },
-              {
-                title:'Backend',
-                items: ["PHP", "mySQL","Node.js & npm", "Mongo.db"]
-              },
-              { 
-                title:'WorkFlow',
-                items: ["Git", "Gulp", "webpack"]
-              }
-            ] 
+         
           each item in skills
             li.skills__item
               .skills-row
                 .skills-row__title #{item.title}
                 ul.skills-row__list
-                  each skill in item.items           
+                  each skill in item.items  
                     li.skills-row__item
-                      svg.skill #{skill}
+                      .skill
+                        svg(viewBox="0 0 100 100" preserveAspectRatio="none").skill__figure
+                          circle(cx="50" cy="50" r="40").skill__circle.skill__circle_under
+                          circle(cx="50" cy="50" r="40" ref="ccolor-circle").skill__circle.skill__circle_above
+                        .skill__title 
+                          p #{skill}
                       
   section.contacts
     .contacts__underlay.google-map      
