@@ -73,3 +73,48 @@ button:active,
 button:focus {
     outline: none;
 }
+@mixin desktop-extra-large {
+  @media (min-width: 2200px){
+      @content;
+    }
+  }
+
+@mixin desktop-large {
+    @media (min-width: 1800px){
+        @content;
+      }
+    }
+
+@mixin desktop {
+    @media (min-width: 1200px){
+        @content;
+      }
+    }
+@mixin laptop {
+  @media (min-width: 900px) {
+      @content;
+    }
+  }
+  
+@mixin tablets {
+    @media (min-width: 600px) {
+        @content;
+      }
+    }
+
+@mixin phones{
+    @media (max-width: 599px) { 
+        @content;
+      }
+    }
+
+@include desktop-large{
+  font-size: 17px ;  } 
+@include desktop{
+  font-size: 16px ; } 
+@include laptop {
+  font-size: 15px ; } 
+@include tablets{
+  font-size: 14px ;}
+@include phones{
+  font-size: 13px ;}

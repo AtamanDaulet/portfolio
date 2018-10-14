@@ -3,12 +3,10 @@ const env = process.env.NODE_ENV;
 
 module.exports = {
   entry: {
-    about: "./src/scripts/modules/about.js",
+    about: "./src/scripts/about.js",
     auth: "./src/scripts/modules/auth.js",
-    works: "./src/scripts/modules/works.js",
-    blog: "./src/scripts/modules/blog.js" ,
-    blur: "./src/scripts/modules/blur.js" ,
-    slider: "./src/scripts/modules/slider.js" 
+    works: "./src/scripts/works.js",
+    blog: "./src/scripts/blog.js"     
   },
   output: {
     filename: "[name].bundle.js"

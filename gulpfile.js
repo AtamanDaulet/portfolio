@@ -13,15 +13,11 @@ const moduleImporter = require("sass-module-importer");
 const del = require("del");
 const fs = require("fs");
 
-const SRC_DIR = "./src";
-const DIST_DIR = "./public";
-const ROOT_PATH = `${DIST_DIR}`;
-const VIEWS_DIR = "./views";
 
 // стили
 gulp.task("styles", () => {
   return gulp
-    .src(`${SRC_DIR}/styles/main.scss`)
+    .src(`${config.SRC_DIR}/styles/main.scss`)
     .pipe($gp.sourcemaps.init())
     .pipe($gp.plumber())
     .pipe($gp.sassGlob())
@@ -40,26 +36,26 @@ gulp.task("styles", () => {
     )
     .pipe($gp.sourcemaps.write())
     .pipe($gp.rename({ suffix: ".min" }))
-    .pipe(gulp.dest(`${DIST_DIR}/styles/`))
+    .pipe(gulp.dest(`${config.DIST_DIR}/styles/`))
     .pipe(reload({ stream: true }));
 });
 
 // переносим шрифты
 gulp.task("fonts", () => {
   return gulp
-  .src(`${SRC_DIR}/fonts/**`)
-  .pipe(gulp.dest(`${DIST_DIR}/fonts/`));
+  .src(`${config.SRC_DIR}/fonts/**`)
+  .pipe(gulp.dest(`${config.DIST_DIR}/fonts/`));
 });
 
 // очистка
 gulp.task("clean", () => {
-  return del(ROOT_PATH);
+  return del(config.ROOT_PATH);
 });
 
 // собираем скрипты webpack
 gulp.task("scripts", () => {
   return gulp
-    .src(`${config.SRC_DIR}/scripts/modules/*.js`)
+    .src(`${config.SRC_DIR}/scripts/*.js`)
     .pipe($gp.plumber())
     .pipe(
       $webpack(
@@ -93,35 +89,32 @@ gulp.task("nodemon", done => {
 //рендерим странички
 gulp.task("pug", () => {
   return gulp
-    .src(`${VIEWS_DIR}/pages/*.pug`)
+    .src(`${config.VIEWS_DIR}/pages/*.pug`)
     .pipe($gp.plumber())
     .pipe($gp.pug({
       locals: JSON.parse(fs.readFileSync("./data/content.json")
       )
     }))
-    .pipe(gulp.dest(`${DIST_DIR}`))
+    .pipe(gulp.dest(`${config.DIST_DIR}`))
     .pipe(reload({ stream: true }));
 });
 
 
 // dev сервер + livereload (встроенный)
-gulp.task(
-  "server",
-  gulp.series("nodemon", done => {
-    browserSync.init({
-      proxy: "http://localhost:3000",
-      port: 8080,
-      open: false
-    });
-    done();
-  })
-);
+gulp.task("server", () => {
+  browserSync.init({
+    server: {
+      baseDir: `${config.DIST_DIR}`
+    },
+    open: false
+  });
+});
 
 // спрайт иконок + инлайн svg
 gulp.task("svg", done => {
   const prettySvgs = () => {
     return gulp
-      .src(`${SRC_DIR}/images/icons/*.svg`)
+      .src(`${config.SRC_DIR}/images/icons/*.svg`)
       .pipe(
         $gp.svgmin({
           js2svg: {
@@ -155,7 +148,7 @@ gulp.task("svg", done => {
         }
       })
     )
-    .pipe(gulp.dest(`${DIST_DIR}/images/icons`));
+    .pipe(gulp.dest(`${config.DIST_DIR}/images/icons`));
 
   // prettySvgs().pipe(
   //   $gp.sassInlineSvg({
@@ -170,22 +163,22 @@ gulp.task("svg", done => {
 gulp.task("images", () => {
   return gulp
     .src([
-      `${SRC_DIR}/images/**/*.*`,
-     `!${SRC_DIR}/images/icons/*.*`])
-    .pipe(gulp.dest(`${DIST_DIR}/images/`));
+      `${config.SRC_DIR}/images/**/*.*`,
+     `!${config.SRC_DIR}/images/icons/*.*`])
+    .pipe(gulp.dest(`${config.DIST_DIR}/images/`));
 });
 
 // галповский вотчер
 gulp.task("watch", () => {
-  gulp.watch(`${SRC_DIR}/styles/**/*.scss`, gulp.series("styles"));
-  gulp.watch(`${SRC_DIR}/images/**/*.*`, gulp.series("images"));
-  gulp.watch(`${SRC_DIR}/scripts/**/*.js`, gulp.series("scripts"));
-  gulp.watch(`${SRC_DIR}/fonts/*`, gulp.series("fonts"));
-  gulp.watch(`${VIEWS_DIR}/pages/*.pug`, gulp.series("pug"));
+  gulp.watch(`${config.SRC_DIR}/styles/**/*.scss`, gulp.series("styles"));
+  gulp.watch(`${config.SRC_DIR}/images/**/*.*`, gulp.series("images"));
+  gulp.watch(`${config.SRC_DIR}/scripts/**/*.js`, gulp.series("scripts"));
+  gulp.watch(`${config.SRC_DIR}/fonts/*`, gulp.series("fonts"));
+  gulp.watch(`${config.VIEWS_DIR}/pages/*.pug`, gulp.series("pug"));
 });
 
 
-// GULP:RUN
+// GULP:DEV
 gulp.task(
   "default",
   gulp.series(

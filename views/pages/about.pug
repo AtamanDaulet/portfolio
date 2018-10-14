@@ -1,25 +1,27 @@
 extends ../main.layout.pug
 
+
 block variables
   - var title = 'About'
-  -
-    var skills = [
-      { 
-        title:'Frontend',
-        items: ["HTML5", "CSS3", "JavaScript"]
-      },
-      {
-        title:'Backend',
-        items: ["PHP", "mySQL","Node.js & npm", "Mongo.db"]
-      },
-      { 
-        title:'WorkFlow',
-        items: ["Git", "Gulp", "webpack"]
-      }
-    ] 
+  //- -
+  //-   var skills = [
+  //-     { 
+  //-       title:'Frontend',
+  //-       items: ["HTML5", "CSS3", "JavaScript"]
+  //-     },
+  //-     {
+  //-       title:'Backend',
+  //-       items: ["PHP", "mySQL","Node.js & npm", "Mongo.db"]
+  //-     },
+  //-     { 
+  //-       title:'WorkFlow',
+  //-       items: ["Git", "Gulp", "webpack"]
+  //-     }
+  //-   ] 
 
 block scripts
-  script(src='about.bundle.js')  
+  script(src='./scripts/about.bundle.js')  
+
 
 block content
   include ../common/hero.pug
@@ -51,28 +53,54 @@ block content
         h1.about__right-title_text What can I do for you
       .about__small-decs
         p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
-      .about__container
-        ul.skills
+      .about__container#skills-container
+        //- ul.skills
          
-          each item in skills
-            li.skills__item
-              .skills-row
-                .skills-row__title #{item.title}
-                ul.skills-row__list
-                  each skill in item.items  
-                    li.skills-row__item
-                      .skill
-                        svg(viewBox="0 0 100 100" preserveAspectRatio="none").skill__figure
-                          circle(cx="50" cy="50" r="40").skill__circle.skill__circle_under
-                          circle(cx="50" cy="50" r="40" ref="ccolor-circle").skill__circle.skill__circle_above
-                        .skill__title 
-                          p #{skill}
-                      
+        //-   each item in skills
+        //-     li.skills__item
+        //-       .skills-row
+        //-         .skills-row__title #{item.title}
+        //-         ul.skills-row__list
+        //-           each skill in item.items  
+        //-             li.skills-row__item
+        //-               .skill
+        //-                 svg(viewBox="0 0 100 100" preserveAspectRatio="none").skill__figure
+        //-                   circle(cx="50" cy="50" r="40").skill__circle.skill__circle_under
+        //-                   circle(cx="50" cy="50" r="40" ref="color-circle").skill__circle.skill__circle_above
+        //-                 .skill__title 
+        //-                   p #{skill}
+                          
+        script(type="text/x-template")#skills-list
+          ul.skills-list 
+              li.skills-list__item(v-for="skill in skills")
+                  skills-row(
+                      :skill="skill"
+                  )
+                    
+        script(type="text/x-template")#skills-row
+            .skills-row
+                .skills-list__title {{skill.skillsGroup}}
+                ul.skills
+                    li.skills-list__item(v-for="(skillPercents, skillName) in skill.skills")
+                        skill(
+                            :skillName="skillName",
+                            :skillPercents="skillPercents"
+                        )
+
+        script(type="text/x-template")#skill
+            .skill
+                svg(viewBox="0 0 100 100" preserveAspectRatio="none").skill__figure
+                    circle(cx="50" cy="50" r="40").skill__circle.skill__circle_under
+                    circle(cx="50" cy="50" r="40" ref="color-circle").skill__circle.skill__circle_above
+                .skill__title {{ skillName }}
+
+
+
   section.contacts
     .contacts__underlay.google-map      
     .contacts__container
       .user-data    
-        .user-data-title Contacts          
+        .user-data-title Contacts    
       .user-data__container
         ul.user-contacts-list
           li.user-contacts-list__item
