@@ -46,5 +46,3 @@ new Vue({
   template: '#skills-list'
 })
 
-
-console.log(1+2);
