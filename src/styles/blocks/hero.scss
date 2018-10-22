@@ -4,11 +4,16 @@
 };
 .hero{
     display: flex;
+    height: 785px;
+};
+.hero__parallax{
+    display: flex;
     justify-content: center;
     background: url("../../images/bg/hero.jpg") no-repeat;
     background-size: cover;
-    height: 785px;
-};
+    height: 80vh;
+    width: 100vw;
+}
 .wrapper-inner-relative{
     position: relative;
 };
@@ -38,11 +43,16 @@
     top: 25px;
     right: 30px;
     cursor: pointer;
+    
 };
 .hamburger_menu{
     width: 40px;
     height: 35px;  
-    fill: $white
+    fill: $white  ;
+    @include phones{
+        width: 25px;
+        height: 25px; 
+    }  
 };
 .hero__container{
     display: flex;
@@ -58,9 +68,21 @@
     color: $white;
     height: 80%;
 }
-.user__avatar_pic{
+.user_height{
+    height: 35%;
+}
+.user__avatar{
+    display: flex;
     height: 145px;
     width: 145px;
+    @include phones{
+        margin-bottom: 35px;
+    } 
+}
+.user__avatar_pic{
+    height: 100%;
+    width: 100%;
+    background-size: cover;
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -75,13 +97,16 @@
     @include roboto($style: 'medium');   
     font-size: 35px;
     margin-bottom: 5px;
+    @include phones{
+        font-size: 21px;
+    } 
 };
 .user__desc{
     opacity: 0.8;
 };
 .hero__btn{
     position: absolute;
-    top: 500px;
+    top: 600px;
     left: calc(50% - 10px);
     z-index: 5;
     cursor: pointer;
@@ -91,4 +116,19 @@
     height: 20px;
     fill:  $white;
     opacity: 0.6;
+    @include phones{
+        width: 25px;
+        height: 25px;
+    } 
+}
+.hero__triangle-border::after{
+    content: ''; 
+    position: absolute;
+    top: 570px; 
+    left: 0px; 
+    border: 110px solid transparent; 
+    border-left: calc(100vw/2) solid $white; 
+    border-right: calc(100vw/2) solid $white; 
+    border-bottom: 107px solid $white; 
+    z-index: 3;
 }

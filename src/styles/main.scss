@@ -11,6 +11,7 @@ $mobile-screen: 480px;
 
 @import 'normalize.css';
 @import './layout/fonts.scss';
+@import './layout/mixin_media.scss';
 @import './layout/base.scss';
 @import './layout/title-dash.scss';
 
@@ -24,10 +25,10 @@ $mobile-screen: 480px;
 @import './blocks/about.scss';
 @import './blocks/contacts.scss';
 @import './blocks/footer.scss';
-@import './blocks/hero-triangle.scss';
 @import './blocks/hero-title.scss';
 @import './blocks/slider.scss';
 @import './blocks/feed.scss';
 @import './blocks/feed-form.scss';
 @import './blocks/blog.scss';
 @import './blocks/skills.scss';
+// @import './blocks/blog-mobile.scss';

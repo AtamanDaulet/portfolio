@@ -10,13 +10,13 @@ block content
     +icon("portfolio_header", "portfolio_header-svg")
   include ../common/hero.pug
     
-  include ../common/hero-triangle.pug
   .hero__title
     .hero__title-bg
       +icon("works_header", "works_header-svg")
       .hero__title_text  
         p My works
   section.section.works
+      .hero-works__square
       include ../common/slider.pug
   section.section.feed.js-blur
     .feed__title

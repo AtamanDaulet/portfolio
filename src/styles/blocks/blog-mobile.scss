@@ -1,0 +1,53 @@
+.blog__mobile{
+    @include phones{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        height: 100vh;
+        width: 285px;
+        display: block;
+        z-index: 10;
+        background: $green;
+        color: $white;
+        
+        &::before{
+            position: absolute;
+            top: 50%;
+            right: -10px;
+            content: "";
+            width: 20px;
+            height: 40px;
+            border: 1px solid $green;
+            background: $green;          
+            border-top-right-radius: 100%; 
+            border-bottom-right-radius: 100%;         
+            z-index: 9;
+        }
+        // &::after{
+        //     position: absolute;
+        //     top: -50%;
+        //     left: 0px;
+        //     content: "";
+        //     background: $green;
+        //     height: 335px;
+        //     width: 100%;
+        //     z-index: 7;
+        // }
+    }
+}
+.sidebar__active{
+    @include phones{
+        color: $white;
+    }    
+}
+.sidebar__active::before{
+    @include phones{
+        left: 9999px;
+    }    
+}
+.sidebar__list{
+    @include phones{
+        margin-top: 600px;
+        margin: 0 10px;
+    }
+}

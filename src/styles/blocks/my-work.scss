@@ -18,5 +18,21 @@
     display: flex;
     height: 790px;
     margin-top: 40px;
+    position: relative;
+    @include tablets{
+        height: 1014px;        
+    }
+    @include phones{
+        height: 920px;
+    }
+    
+}
+.hero-works__square{
+    position: absolute;
+    top: -49px;
+    left: 0px;
+    height: 50px;
+    width: 100%;
+    background: $white;
 }
 

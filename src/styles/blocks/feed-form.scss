@@ -16,7 +16,9 @@
     overflow: hidden;
     max-width: 420px;
     position: relative;
-    
+    @include phones{
+        width: 300px;
+    }
 }
 .feed__form_bg{
     width: 100%;
@@ -47,6 +49,9 @@
     position: relative;    
     display: flex;
     justify-content: center;    
+    @include phones{
+        width: 100%;
+    }
 }
 .form__author, .form__mail{
     height: 65px;
@@ -66,14 +71,21 @@
     padding: 15px;
     @include  roboto("regular") ;
     opacity: 0.8;
+    
 }
 .form__author_name, .form__author_email{
     width: 340px;
     height: 45px;
+    @include phones{
+        width: 300px;
+    }
 }
 .form__author_msg{
     width: 340px;
     height: 140px;
+    @include phones{
+        width: 300px;
+    }
 }
 .form__btn{
     display: flex;
@@ -121,6 +133,12 @@
     position: absolute;
     top: -30px;
     left: calc(50% - 10px);
+    @include tablets{
+        top: -20px;     
+    }
+    @include phones{
+        top: -30px;
+    }
 }
 .arrow_up__svg{
     width: 25px;

@@ -2,20 +2,24 @@
     display: flex;
     height: 750px;
     width: 100vw;
+    @include tablets{
+        flex-flow: column nowrap;
+        height: 1495px;
+    }
+    @include phones{
+        height: auto;
+    }
 
     &__col{
         display: flex;
         width: 50%;
         position: relative;
+        @include tablets{
+            width:100%;
+        }
     }
 }
-.about__triangle{
-    position: absolute;
-    top: -220px;
-    width: 100%;
-    height: 220px;
-    z-index: 3;    
-}
+
 .about_bg_left_pic{
     width: 100%;
     height: 100%;
@@ -36,6 +40,10 @@
     position: absolute;
     top: -150px;
     width: 100%;
+    @include tablets{
+        top: -88px;
+        background: $white;
+    }
 };
 
 .about__title_text{
@@ -51,6 +59,12 @@
     -moz-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
+    @include laptop{
+        font-size: 50px
+    }
+    @include phones{
+        font-size: 34px
+    }
 };
 
 @include title-dash(".about__title_text");
@@ -62,19 +76,30 @@
 };
 
 .user-desc{
-    height: 750px;
-    background: $white;
-};
-.user-desc__pic{
     display: flex;
     justify-content: center;
-    width: 100%;
+    align-items: center;
+    flex-flow: column nowrap;
+    height: 750px;
+    background: $white;
+    @include tablets{
+        margin-top: 60px;
+    }
+};
+.user-desc__pic{
+    display: flex; 
+    justify-content: center;
+    width: 445px;
     height: 410px;
     padding-top: 20px;    
     margin-bottom: 25px;
+    @include phones{
+        width: 312px;
+    }
 };
 .user-desc__pic-elem{
     display: flex;
+    height: 100%;
 }
 .user-desc__title{
     display: flex;
@@ -87,6 +112,12 @@
 }  
 .user-desc__title-text{
     position: relative;
+    @include laptop{
+        font-size: 35px;
+    }    
+    @include phones{
+        font-size: 21px;
+    }
 }
 @include title-dash(".user-desc__title-text");
 
@@ -96,9 +127,14 @@
 };
 .user-desc__content-text{
     width: 70%;
+    text-indent: 30px;    
+    @include phones{
+        width: 95%;
+    }
 };
 
 //right side
+
 .about__right-title{
     display: flex;
     justify-content: center;
@@ -107,6 +143,9 @@
     position: absolute;
     top: -75px;
     width: 100%;
+    @include tablets{
+        height: 50px;
+    }
 };
 
 .about__right-title_text{
@@ -122,6 +161,11 @@
     -moz-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
+    text-align: center;
+    @include phones{
+        font-size: 21px;
+        text-align: center;
+    }
 };
 
 @include title-dash(".about__right-title_text");
@@ -131,6 +175,35 @@
     flex-flow: column nowrap;
     justify-content: flex-start;
     background: $beige;
+    @include tablets{
+        margin-top: 105px;
+        height: 795px;
+    }
+    @include phones{
+        height: auto;
+    }
+}
+
+.hero__square{
+    position: absolute;
+    top: -105px;
+    left: 0px;
+    height: 107px;
+    width: 100%;
+    background: $beige; 
+    z-index: 4;
+}
+.triangle-border-beige{
+    position: absolute;
+    top: -105px;
+    left: 0px;
+    border-left: calc(100vw/2) solid transparent; 
+    border-bottom: 107px solid $beige;
+    z-index: 4; 
+    @include tablets{
+        display: none;
+        
+    }
 }
 .about__small-decs{
     padding-top: 10px;
@@ -138,5 +211,13 @@
     margin-bottom: 40px;
     margin-left: 40px;
     text-indent: 30px;
-    width: 580px;
+    @include tablets{
+        width: 70%;
+        margin: 0px auto;
+        margin-bottom: 40px;
+    }
+    @include phones{
+        width: 95%;
+        margin-bottom: auto;
+    }
 };

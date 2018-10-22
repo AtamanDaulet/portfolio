@@ -1,21 +1,68 @@
 .skills-list{
     margin: 0px 40px;
+    @include tablets{
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        height: 585px;
+        @include tablets{
+            justify-content: flex-start;
+        }
+        @include phones{
+            margin: auto;
+            height: auto;
+        }
+    }
 }
-// .skills-row{
-    
-// }
+// .skills-list__item{
+//     display: flex;
+//     width: 110px;
+//     margin-right: 35px;
+//     @include tablets{
+//         height: 110px;
+//         width: 110px;
+//     }
+// };
+.skills-row{
+    @include tablets{
+        width: 100%;
+        height: 100%;
+    }
+}
 .skills-list__title{
     @include  roboto("medium") ;
     font-size: 28px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    @include tablets{
+        text-align: center;        
+    }
+    @include phones{
+        font-size: 21px;
+    }
 };
 .skills{
     display: flex;
     flex-flow: row nowrap;
+    @include phones{
+        justify-content: space-around;
+        flex-wrap: wrap;
+        width: 100%;
+    }
 };
-.skills-list__item{
+.skills__item{
     display: flex;
     width: 110px;
     margin-right: 35px;
+    @include tablets{
+        height: 110px;
+        width: 110px;
+    }
+    @include phones{
+        margin-right: 0px;
+        margin-bottom: 30px;
+    }
 };
 .skill{
     position: relative;

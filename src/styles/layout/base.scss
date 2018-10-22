@@ -9,6 +9,17 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   @include roboto();
+
+  @include desktop-large{  
+    font-size: 17px ; } 
+  @include desktop{
+    font-size: 16px ; } 
+  @include laptop {
+    font-size: 15px ; } 
+  @include tablets{
+    font-size: 14px ;}
+  @include phones{
+    font-size: 14px ;}
 }
 
 .wrapper {
@@ -75,42 +86,20 @@ button:focus {
 }
 
 
-@mixin desktop-large {
-    @media (max-width: 1800px){
-        @content;
-      }
-    }
+// @mixin desktop-large {
+//     @media (max-width: 1800px){
+//         @content;
+//       }
+//     }
 
-@mixin desktop {
-    @media (max-width: 1024px){
-        @content;
-      }
-    }
-@mixin laptop {
-  @media (max-width: 1024px) {
-      @content;
-    }
-  }
-  
-@mixin tablets {
-    @media (max-width: 600px) {
-        @content;
-      }
-    }
 
-@mixin phones{
-    @media (max-width: 599px) { 
-        @content;
-      }
-    }
-
-@include desktop-large{
-  font-size: 17px ;  } 
-@include desktop{
-  font-size: 16px ; } 
-@include laptop {
-  font-size: 15px ; } 
-@include tablets{
-  font-size: 14px ;}
-@include phones{
-  font-size: 13px ;}
+// @include desktop-large{
+//   font-size: 17px ;  } 
+// @include desktop{
+//   font-size: 16px ; } 
+// @include laptop {
+//   font-size: 15px ; } 
+// @include tablets{
+//   font-size: 14px ;}
+// @include phones{
+//   font-size: 13px ;}

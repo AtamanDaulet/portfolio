@@ -10,6 +10,12 @@
     align-items: center;
     width: 1200px;
     position: relative;
+    @include tablets{
+        width: 720px;
+    }   
+    @include phones{
+        width: 320px;
+    }      
 };
 
 .welcome__header{
@@ -37,6 +43,12 @@
     color: $white ;
     @include roboto($style: 'medium');
     cursor: pointer;
+    @include tablets{
+        margin-right: 0px;
+    }    
+    @include phones{
+        margin: 10px auto;
+    } 
 };
 
 .btn_auth:hover{
@@ -55,6 +67,9 @@
     opacity: 0.851;
     border-radius: 5px;
     position: relative;
+    @include phones{
+        width: 300px;
+    } 
 };
 
 .welcome__avatar{
@@ -72,6 +87,9 @@
     @include roboto($style: 'medium');   
     font-size: 28px;
     margin-bottom: 5px;
+    @include phones{
+        font-size: 21px;;
+    } 
 };
 
 .welcome__title{
@@ -109,6 +127,7 @@
     height: 45px;
     width: 100%;
     display: flex;
+     
 };
 
 .welcome__link{
@@ -127,6 +146,7 @@
 
 .btn-work{
     width: 40%;
+    border-bottom-left-radius: 5px;
 };
 
 .btn-about{
@@ -137,6 +157,7 @@
 
 .btn-blog{
     width: 25%;
+    border-bottom-right-radius: 5px;   
 };
 
   

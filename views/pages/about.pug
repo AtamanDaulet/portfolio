@@ -12,10 +12,6 @@ block content
   
   section.about
     .about__col.about__col_bg_white
-      .about__triangle
-        svg(class="about_bg_left_pic")
-          use(xlink:href="/images/about/about_bg_left.svg#about_bg_left")
-
       .about__title
         +icon("about_header", "about_header_pic")
         h1.about__title_text About me
@@ -24,17 +20,15 @@ block content
         .user-desc__pic
           img(src="/images/content/user-full.jpg", alt="user-full").user-desc__pic-elem
         .user-desc__title 
-          h2.user-desc__title-text Who am I 
+          h3.user-desc__title-text Who am I 
         .user-desc__content
           p.user-desc__content-text Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты. <br><br> Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
 
     .about__col.about__col_bg_beige
-      .about__triangle
-        svg(class="about_bg_right_pic")
-          use(xlink:href="/images/about/about_bg_right.svg#about_bg_right")
-
+      .hero__square
+        .triangle-border-beige 
       .about__right-title
-        h1.about__right-title_text What can I do for you
+        .about__right-title_text What can I do for you
       .about__small-decs
         p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
       .about__container#skills-container
@@ -50,7 +44,7 @@ block content
             .skills-row
                 .skills-list__title {{skill.skillsGroup}}
                 ul.skills
-                    li.skills-list__item(v-for="(skillPercents, skillName) in skill.skills")
+                    li.skills__item(v-for="(skillPercents, skillName) in skill.skills")
                         skill(
                             :skillName="skillName",
                             :skillPercents="skillPercents"

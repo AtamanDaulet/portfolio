@@ -10,6 +10,9 @@
     z-index: 5;
     width: 500px;
     height: 165px;
+    @include phones{
+        width: 90%;
+    }
 }
 .works_header-svg{
     width: 100%;
@@ -28,5 +31,8 @@
     -moz-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
+    @include phones{
+        font-size: 35px;
+    }
 }
 @include title-dash(".hero__title_text");

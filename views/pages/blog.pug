@@ -7,24 +7,25 @@ block scripts
 
 block content
   section.hero.hero_blog
-    .wrapper-inner.wrapper-inner-relative
-      .hero__lists
-        +iconLink( vkLink, "vk", "hero__vk")
-        +iconLink( githubLink,"github", "hero__github")
-        +iconLink( inLink, "in", "hero__in")   
-      .hero__menu
-        .hamburger
-          +icon("hamburger", "hamburger_menu")
-      .hero__btn.hero__btn_blog
-        .arrow__down
-          +icon("arrow_down", "arrow__down_pic")    
-      .hero__container
-        .user
-          .user__avatar 
-          +image("content/user.jpg", "user", "user__avatar_pic")
-          .user__info.user__info_blog
-            .user__name #{name}
-            .user__desc The personal site of the web developer
+    .hero__parallax 
+      .wrapper-inner.wrapper-inner-relative
+        .hero__lists
+          +iconLink( vkLink, "vk", "hero__vk")
+          +iconLink( githubLink,"github", "hero__github")
+          +iconLink( inLink, "in", "hero__in")   
+        .hero__menu
+          .hamburger
+            +icon("hamburger", "hamburger_menu")
+        .hero__btn.hero__btn_blog
+          .arrow__down
+            +icon("arrow_down", "arrow__down_pic")    
+        .hero__container
+          .user.user_height.parallax__base
+            .user__avatar 
+              +image("content/user.jpg", "user", "user__avatar_pic")
+            .user__info.user__info_blog.parallax__title
+              .user__name #{name}
+              .user__desc The personal site of the web developer
     .blog__triangle
     
   section.blog__title
@@ -34,6 +35,9 @@ block content
             p blog
         .blog__subtitle Статьи, которые я написал
         +icon("blog_header", "blog_header-svg")
+    .hero__btn.blog__arrow__down
+      .arrow__down
+        +icon("arrow_down", "arrow__down_pic blog__arrow")   
   section.blog__content
     .blog__content_wrapper
       .blog__left.blog__mobile
@@ -51,7 +55,7 @@ block content
             .article__date 22 ноября 2017
             p.article__text Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия.
             p.article__text Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.
-            img(src="./images/blog/article1-code.jpg", alt="article1-code")
+            img(src="./images/blog/article1-code.jpg", alt="article1-code", class="article1-code")
           hr.horizontal_line
           .article
             h2.article__title Приёмы в вёрстке, без которых  не обходится ни один сайт
@@ -71,10 +75,10 @@ block content
             p.article__text Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия.
             p.article__text Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.
           hr.horizontal_line
-    
+
 
 
 
     
   block scripts
-  script(src='/scripts/main.bundle.js')
+   script(src='/scripts/blog.bundle.js')
