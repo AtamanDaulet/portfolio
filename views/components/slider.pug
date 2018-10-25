@@ -1,0 +1,43 @@
+script(type="text/x-template")#js-slider-root
+    .slider
+        info( :work="currentWork"      )
+        display( 
+            :work="currentWork"  
+            @slideListener="handleSlide"
+            :worksDisplay="works"  
+            :indexDisplay="currentIndex"  
+         )
+
+script(type="text/x-template")#js-slider-info
+    .slider__item.slider__desc
+        .works__desc_item.works__title 
+            .works__title_text 
+                p {{work.title}}
+        .works__desc_item.works__technologies
+            .works__desc_bottom_line {{work.skills}}
+        .works__desc_item.works__btn
+            a(:href="work.link" target="_blank").works__btn_link
+                .works__btn_pic
+                    +icon("link", "works__btn_svg")
+                .works__btn_text View site
+
+script(type="text/x-template")#js-slider-display
+    .slider__item.slider__wrapper
+        .slider__showing
+            img(:src="work.photo", alt="slider__showing").slider__showing-pic
+        btns(
+            @slide="slideListener"
+            :works = "worksDisplay"
+            :index = "indexDisplay"            
+        )
+script(type="text/x-template")#js-slider-btns
+    .slider__smalls        
+        button.slider__up(@click="slide('next')")            
+            .slider__smalls_inner
+                img(:src="nextButtonWorks[index].photo", alt="slider__showing").slider__scroll
+            +icon("portf_arrow_down", "slider__svg")
+        button.slider__down(@click="slide('prev')")
+            .slider__smalls_inner
+                img(:src="prevButtonWorks[index].photo", alt="slider__showing").slider__scroll
+            +icon("portf_arrow_up", "slider__svg")
+            

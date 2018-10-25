@@ -1,37 +1,123 @@
-const slides = document.querySelectorAll("#sliders .slide ");
-const next = document.getElementById("next");
-const previous = document.getElementById("previous");
-const controls = document.querySelectorAll(".controls ");
+import Vue from 'vue';
 
-let currentSlide = 0;
+const info = {
+    template: "#js-slider-info",
+    props: {
+        work: Object
+    }    
+};
+const btns = {
+    template: "#js-slider-btns",
+    props:{
+        works : Array,   
+        index: Number ,   
+       // ["direction"]  
+    },
+    data(){
+        return{
+            prevButtonWorks:[],
+            nextButtonWorks:[]
+        }
+    },
+    created(){
+        this.prevButtonWorks = this.transformWorksForButton('prev');
+        this.nextButtonWorks = this.transformWorksForButton('next');
+    },
+    methods:{
 
-//осуществяет переход к слайду номер n
-function goToSlide(n) {
-    slides[currentSlide].className = "name";
-    currentSlide = (n+slides.length)%slides.length //остаток от деления
-    slides[currentSlide].className = "slide showing";
-}
+        slide: function(direction) {
+        this.$emit("slide", direction);
+        },
 
-function setupListners() {
-    next.onclick = function(){
-        goToSlide(currentSlide+1);
-    }
-    previous.onclick = function(){
-        goToSlide(currentSlide-1);
-    }
-}
+        transformWorksForButton(buttonDirection){
+            const worksArray = [...this.works];
+            const lastItem = worksArray[worksArray.length - 1];
+            
 
-// показывает кнопки для навигации
-function showButtons() {
-    for (let i = 0; i < controls.length; i++) {
-        controls[i].style.display = "inline-block";        
-    }
-}
+            switch (buttonDirection) {
+                case "prev":
+                    worksArray.unshift(lastItem);
+                    worksArray.pop();
+                    break;
+                case "next":
+                    worksArray.push(worksArray[0]);
+                    worksArray.shift();
+                    break;
+                default:
+                    break;
+            }
+            return worksArray ;
+        }
+    }   
+};
+const display = {
+    template: "#js-slider-display" ,
+    components:{ btns },
+    props: {
+        work: Object,
+        worksDisplay : Array,   
+        indexDisplay: Number 
+    },
+    data: function () {
+        return {
+            displayDirections: ["displayDirection"],            
+            worksDisplay  : "works",     
+            indexDisplay: "index"   
+        };
+      },
+    methods: {
+        slideListener: function (displayDirection) {
+            this.$emit("slideListener",displayDirection );        
+        }
+      }
+};
 
-function sliderInit() {
-    if(sliderInit.length !== 0){
-        setupListners();
-        showButtons();
-    }
-}
-module.exports = sliderInit;
+
+new Vue({
+    el: "#slider-component",
+    components:{ info, display },
+    data(){
+        return{
+            works:[],
+            currentIndex: 0
+        }
+    },
+    computed:{
+        currentWork(){
+            return this.works[this.currentIndex]
+        }
+    },
+    watch:{
+        currentIndex(value){
+            this.loopCurrentIndex(value);
+        }
+    },
+    created(){
+        const data = require("../../../data/work.json");
+        this.works =data;
+        this.currentWork = data[0];
+    },
+    methods:{
+        loopCurrentIndex(value){
+            const worksNumCountedFronZero = this.works.length - 1;
+
+            if(value > worksNumCountedFronZero) this.currentIndex = 0
+            if(value < 0) this.currentIndex = worksNumCountedFronZero
+        },
+        handleSlide(displayDirection){
+            switch (displayDirection) {
+                case "prev":
+                    this.currentIndex = this.currentIndex - 1;
+                    break;
+                case "next":
+                    this.currentIndex = this.currentIndex + 1;                    
+                    break;            
+                default:
+                    break;
+            }
+            
+        }
+    },
+    
+    template: "#js-slider-root"
+})

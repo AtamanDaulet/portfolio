@@ -17,7 +17,8 @@ block content
         p My works
   section.section.works
       .hero-works__square
-      include ../common/slider.pug
+      #slider-component 
+      
   section.section.feed.js-blur
     .feed__title
       +icon("about_header", "feed__title_svg")
@@ -66,3 +67,4 @@ block content
       .arrow_up__relative
         +icon("arrow_down", "arrow_up__svg")
 
+  include ../components/slider.pug

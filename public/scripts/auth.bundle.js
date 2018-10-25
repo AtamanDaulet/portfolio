@@ -81,20 +81,20 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/scripts/modules/auth.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/scripts/auth.js");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/scripts/modules/auth.js":
-/*!*************************************!*\
-  !*** ./src/scripts/modules/auth.js ***!
-  \*************************************/
+/***/ "./src/scripts/auth.js":
+/*!*****************************!*\
+  !*** ./src/scripts/auth.js ***!
+  \*****************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuL3NyYy9zY3JpcHRzL21vZHVsZXMvYXV0aC5qcy5qcyIsInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./src/scripts/modules/auth.js\n");
+eval("\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuL3NyYy9zY3JpcHRzL2F1dGguanMuanMiLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./src/scripts/auth.js\n");
 
 /***/ })
 
