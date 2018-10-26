@@ -1,0 +1,189 @@
+
+// .welcome__login
+
+.welcome__login{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+}
+.login__title{
+    @include bernier();
+    font-size: 35px;
+    position: relative;
+    height: 25%;
+    display: flex;
+    align-items: center;
+}
+
+@include title-dash(".login__title");
+
+.login__form{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-around;
+    height: 60%;
+    width: 100%;
+    font-size: 16px;
+}
+.login__input{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 115px;
+    width: 100%;
+}
+.login__input_log,.login__input_password{
+    display: flex;
+    height: 45px;
+    width: 90%;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    background: #fff;
+}
+.login__icon_wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    background: $light-grey;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.login__input_place{
+    display: flex;
+    flex: 1;
+    border: none;
+    margin: 0 15px;
+
+}
+.login__input_place:focus{
+    padding: 0px;
+    outline-offset: 0px;
+    outline: none;
+}
+.login-icon,.password-icon{
+    width: 15px;
+    height: 15px;
+    fill: $text-color;
+}
+.login__check{  
+    margin: 10px 0px;
+}
+.login__check_custom{
+    position: relative;
+    cursor: pointer;
+    padding-left: 15px;  
+}
+.checkbox_custom{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0px;
+    left: -15px;
+    height: 20px;
+    width: 20px;
+    background: $green;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+}
+
+.checkbox_custom::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: $green;
+    opacity: 1;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+}
+.checkbox_hide:checked ~ .checkbox_custom::after{
+    opacity: 0;
+}
+.check-icon{
+    display: flex;
+    height: 14px;
+    width: 14px;
+    fill: $white;
+}
+.checkbox_hide, .checkbox_hide[type="checkbox"]{
+    opacity: 0;
+} 
+.login__text{
+    font-weight: bold;
+}
+.login__radio{
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    margin-bottom: 20px;
+}
+.login__radio_yes, .login__radio_not{
+    position: relative;
+    cursor: pointer;
+    padding-left: 15px;
+}
+.login__radio_yes:hover, .login__radio_not:hover{
+    color: $green;
+}
+.radio_custom{
+    position: absolute;
+    top: 2px;
+    left: -10px;
+    height: 17px;
+    width: 17px;
+    background: #fff;
+    border: 1px solid $light-grey;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.radio_custom::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 8px;
+    width: 8px;
+    background: $green;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    display: none;
+}
+.checkbox_hide:checked ~ .radio_custom::after{
+    display: block;
+}
+
+.btn-main{
+    width: 50%;
+    border: none;
+    border-bottom-left-radius: 5px;
+    border-right: 1px solid #6f889a;
+};
+.btn-login{
+    width: 50%;
+    border: none;
+    border-bottom-right-radius: 5px;   
+    border-left: 1px solid #6f889a;
+}; 

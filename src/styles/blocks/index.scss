@@ -72,6 +72,10 @@
     } 
 };
 
+.welcome__main{
+    display: none;
+} 
+
 .welcome__avatar{
     height: 150px;
     width: 150px;
@@ -126,8 +130,7 @@
     right: 0;
     height: 45px;
     width: 100%;
-    display: flex;
-     
+    display: flex;     
 };
 
 .welcome__link{
@@ -160,7 +163,6 @@
     border-bottom-right-radius: 5px;   
 };
 
-  
 //footer
 
 .footer-containe{
