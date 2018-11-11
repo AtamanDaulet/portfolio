@@ -1,112 +1,110 @@
-.feed{
-    height: 1140px;
-    width: 100%;
-    background: url("../../images/bg/work-feed.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    @include tablets{
-        display: flex;
-        flex-flow: column nowrap;
-        align-items: center;
-    }
-}
-.feed__title{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 250px;
-    position: relative;
-    text-align: center;
-    @include phones{
-        width: 95%;
-        height: 130px;
-    }
-}
-.feed__title_svg{
-    width: 100%;
-    height: 90%;
-    fill: $light-grey;
-}
-.feed__content{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 270px;
-    @include tablets{
-        width: 95%;
-    }
-    @include phones{
-        width: 95%;
-        height: 435px;
-    }
-}
-.feed__content_list{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 240px;
-    @include phones{
-        flex-direction: column;
-        height: 100%;
-        justify-content: flex-start;
-    }
-}
-.feed__content_item{
+.feed {
+  height: 1140px;
+  width: 100%;
+  background: url("../images/bg/work-feed.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  @include tablets {
     display: flex;
     flex-flow: column nowrap;
-    height: 100%;
-    width: 400px;
-    margin: 0 10px;
-    @include tablets{
-        width: 95%;
-        align-items: center;
-    }
-    @include phones{
-        width: 95%;
-        align-items: center;
-    }
-}
-.feed__item_quotes{
-    font-size: 100px;
-    font-family: "Font Awesome";
-    color: $light-grey;
-    font-weight: bolder;
-    height: 40px;
-    line-height: 1;
-    margin-bottom: 25px;
-}
-.feed__item_text{
-    height: 95px;    
-    margin-bottom: 25px;
-}
-.feed__item_author{
-    display: flex;
-    flex-flow: row nowrap;
     align-items: center;
+  }
 }
-.feed__author_icon{
-    width: 80px;
-    height: 80px;
-    margin-right: 25px;
+.feed__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 250px;
+  position: relative;
+  text-align: center;
+  @include phones {
+    width: 95%;
+    height: 130px;
+  }
 }
-.feed__author_icon-pic{
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
+.feed__title_svg {
+  width: 100%;
+  height: 90%;
+  fill: $light-grey;
+}
+.feed__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 270px;
+  @include tablets {
+    width: 95%;
+  }
+  @include phones {
+    width: 95%;
+    height: 435px;
+  }
+}
+.feed__content_list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 240px;
+  @include phones {
+    flex-direction: column;
+    height: 100%;
+    justify-content: flex-start;
+  }
+}
+.feed__content_item {
+  display: flex;
+  flex-flow: column nowrap;
+  height: 100%;
+  width: 400px;
+  margin: 0 10px;
+  @include tablets {
+    width: 95%;
+    align-items: center;
+  }
+  @include phones {
+    width: 95%;
+    align-items: center;
+  }
+}
+.feed__item_quotes {
+  font-size: 100px;
+  font-family: "Font Awesome";
+  color: $light-grey;
+  font-weight: bolder;
+  height: 40px;
+  line-height: 1;
+  margin-bottom: 25px;
+}
+.feed__item_text {
+  height: 95px;
+  margin-bottom: 25px;
+}
+.feed__item_author {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+.feed__author_icon {
+  width: 80px;
+  height: 80px;
+  margin-right: 25px;
+}
+.feed__author_icon-pic {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 }
 
 .feed__author_title {
-    
-    color: $green;
+  color: $green;
 }
-.feed__author_name{
-    font-weight: bold;
+.feed__author_name {
+  font-weight: bold;
 }
-  

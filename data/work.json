@@ -1,30 +1,30 @@
 [
-    {
-      "id": 1,
-      "title" : "1 Education School's website",
-      "skills" : "1 Html, Css, JavaScript",
-      "photo" : "/images/works/work-1.png",
-      "link" : "//google.com"
-    },
-    {
-      "id": 2,
-      "title" : "2 Education School's website",
-      "skills" : "2 Html, Css, JavaScript",
-      "photo" : "/images//works/work-2.png",
-      "link" : "//yandex.ru"
-    },
-    {
-      "id": 3,
-      "title" : "3 Education School's website",
-      "skills" : "3 Html, Css, JavaScript",
-      "photo" : "/images//works/work-3.png",
-      "link" : "//rambler.ru"
-    },
-    {
-      "id": 4,
-      "title" : "4 Education School's website",
-      "skills" : "4 Html, Css, JavaScript",
-      "photo" : "/images//works/work-4.png",
-      "link" : "//vk.com"
-    }
-  ]
+  {
+    "id": 1,
+    "title": "1 Education School's website",
+    "skills": "1 Html, Css, JavaScript",
+    "photo": "./images/works/work-1.png",
+    "link": "//google.com"
+  },
+  {
+    "id": 2,
+    "title": "2 Education School's website",
+    "skills": "2 Html, Css, JavaScript",
+    "photo": "./images//works/work-2.png",
+    "link": "//yandex.ru"
+  },
+  {
+    "id": 3,
+    "title": "3 Education School's website",
+    "skills": "3 Html, Css, JavaScript",
+    "photo": "./images//works/work-3.png",
+    "link": "//rambler.ru"
+  },
+  {
+    "id": 4,
+    "title": "4 Education School's website",
+    "skills": "4 Html, Css, JavaScript",
+    "photo": "./images//works/work-4.png",
+    "link": "//vk.com"
+  }
+]

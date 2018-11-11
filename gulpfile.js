@@ -13,7 +13,6 @@ const moduleImporter = require("sass-module-importer");
 const del = require("del");
 const fs = require("fs");
 
-
 // стили
 gulp.task("styles", () => {
   return gulp
@@ -34,8 +33,8 @@ gulp.task("styles", () => {
         cascade: false
       })
     )
-    .pipe($gp.sourcemaps.write())
-    .pipe($gp.rename({ suffix: ".min" }))
+    .pipe($gp.if(env === "development", $gp.sourcemaps.write()))
+    .pipe($gp.rename("main.min.css"))
     .pipe(gulp.dest(`${config.DIST_DIR}/styles/`))
     .pipe(reload({ stream: true }));
 });
@@ -43,8 +42,8 @@ gulp.task("styles", () => {
 // переносим шрифты
 gulp.task("fonts", () => {
   return gulp
-  .src(`${config.SRC_DIR}/fonts/**`)
-  .pipe(gulp.dest(`${config.DIST_DIR}/fonts/`));
+    .src(`${config.SRC_DIR}/fonts/**`)
+    .pipe(gulp.dest(`${config.DIST_DIR}/fonts/`));
 });
 
 // очистка
@@ -91,14 +90,14 @@ gulp.task("pug", () => {
   return gulp
     .src(`${config.VIEWS_DIR}/pages/*.pug`)
     .pipe($gp.plumber())
-    .pipe($gp.pug({
-      locals: JSON.parse(fs.readFileSync("./data/content.json")
-      )
-    }))
+    .pipe(
+      $gp.pug({
+        locals: JSON.parse(fs.readFileSync("./data/content.json"))
+      })
+    )
     .pipe(gulp.dest(`${config.DIST_DIR}`))
     .pipe(reload({ stream: true }));
 });
-
 
 // dev сервер + livereload (встроенный)
 gulp.task("server", () => {
@@ -154,7 +153,7 @@ gulp.task("svg", done => {
   //   $gp.sassInlineSvg({
   //     destDir: `${SRC_DIR}/styles/icons/`
   //   })
-  // );
+  //);
 
   done();
 });
@@ -164,7 +163,8 @@ gulp.task("images", () => {
   return gulp
     .src([
       `${config.SRC_DIR}/images/**/*.*`,
-     `!${config.SRC_DIR}/images/icons/*.*`])
+      `!${config.SRC_DIR}/images/icons/*.*`
+    ])
     .pipe(gulp.dest(`${config.DIST_DIR}/images/`));
 });
 
@@ -177,24 +177,23 @@ gulp.task("watch", () => {
   gulp.watch(`${config.VIEWS_DIR}/pages/*.pug`, gulp.series("pug"));
 });
 
-
 // GULP:DEV
 gulp.task(
   "default",
   gulp.series(
     "clean",
     "svg",
-    gulp.parallel("styles","pug", "images", "fonts", "scripts"),
+    gulp.parallel("styles", "pug", "images", "fonts", "scripts"),
     gulp.parallel("watch", "server")
   )
 );
 
-// //GULP:build
-// gulp.task(
-//   "build",
-//   gulp.series(
-//     "clean",
-//     "svg",
-//     gulp.parallel("styles", "pug", "images", "fonts", "scripts")
-//   )
-// );
+//GULP:build
+gulp.task(
+  "build",
+  gulp.series(
+    "clean",
+    "svg",
+    gulp.parallel("styles", "pug", "images", "fonts", "scripts")
+  )
+);

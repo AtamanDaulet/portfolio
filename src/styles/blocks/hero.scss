@@ -1,134 +1,135 @@
-.maincontent{
-    display: flex;
-    flex-flow: column nowrap;
-};
-.hero{
-    display: flex;
-    height: 785px;
-};
-.hero__parallax{
-    display: flex;
-    justify-content: center;
-    background: url("../../images/bg/hero.jpg") no-repeat;
-    background-size: cover;
-    height: 120vh;
-    width: 100vw;
+.maincontent {
+  display: flex;
+  flex-flow: column nowrap;
 }
-.wrapper-inner-relative{
-    position: relative;
-};
-.hero__lists{
-    position: absolute;
-    height: 25px;
-    top: 30px;
-    left: 0px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-};
-.hero__vk, .hero__github, .hero__in{
+.hero {
+  display: flex;
+  height: 785px;
+}
+.hero__parallax {
+  display: flex;
+  justify-content: center;
+  background: url("../images/bg/hero.jpg") no-repeat;
+  background-size: cover;
+  height: 120vh;
+  width: 100vw;
+}
+.wrapper-inner-relative {
+  position: relative;
+}
+.hero__lists {
+  position: absolute;
+  height: 25px;
+  top: 30px;
+  left: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero__vk,
+.hero__github,
+.hero__in {
+  width: 25px;
+  height: 25px;
+  fill: $white;
+  margin: 0px 15px;
+  opacity: 0.5;
+}
+.hero__vk:hover,
+.hero__github:hover,
+.hero__in:hover {
+  opacity: 1;
+}
+.hero__menu {
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  cursor: pointer;
+}
+.hamburger_menu {
+  width: 40px;
+  height: 35px;
+  fill: $white;
+  @include phones {
     width: 25px;
     height: 25px;
-    fill: $white;
-    margin: 0px 15px;
-    opacity: 0.5;
-};
-.hero__vk:hover ,
-.hero__github:hover ,
-.hero__in:hover{
-    opacity: 1;
-};
-.hero__menu{
-    position: absolute;
-    top: 25px;
-    right: 30px;
-    cursor: pointer;
-    
-};
-.hamburger_menu{
-    width: 40px;
-    height: 35px;  
-    fill: $white  ;
-    @include phones{
-        width: 25px;
-        height: 25px; 
-    }  
-};
-.hero__container{
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    height: 100%;
-};
-.user{
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-    color: $white;
-    height: 80%;
+  }
 }
-.user_height{
-    height: 35%;
+.hero__container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: 100%;
 }
-.user__avatar{
-    display: flex;
-    height: 145px;
-    width: 145px;
-    @include phones{
-        margin-bottom: 35px;
-    } 
+.user {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  color: $white;
+  height: 80%;
 }
-.user__avatar_pic{
-    height: 100%;
-    width: 100%;
-    background-size: cover;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-    margin-bottom: 20px;
-};
-.user__info{
-    text-align: center;
+.user_height {
+  height: 35%;
 }
-.user__name{
-    @include roboto($style: 'medium');   
-    font-size: 35px;
-    margin-bottom: 5px;
-    @include phones{
-        font-size: 21px;
-    } 
-};
-.user__desc{
-    opacity: 0.8;
-};
-.hero__btn{
-    position: absolute;
-    top: 600px;
-    left: calc(50% - 10px);
-    z-index: 5;
-    cursor: pointer;
-};
-.arrow__down_pic{
-    width: 20px;
-    height: 20px;
-    fill:  $white;
-    opacity: 0.6;
-    @include phones{
-        width: 25px;
-        height: 25px;
-    } 
+.user__avatar {
+  display: flex;
+  height: 145px;
+  width: 145px;
+  @include phones {
+    margin-bottom: 35px;
+  }
 }
-.hero__triangle-border::after{
-    content: ''; 
-    position: absolute;
-    top: 570px; 
-    left: 0px; 
-    border: 110px solid transparent; 
-    border-left: calc(100vw/2) solid $white; 
-    border-right: calc(100vw/2) solid $white; 
-    border-bottom: 107px solid $white; 
-    z-index: 3;
+.user__avatar_pic {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  margin-bottom: 20px;
+}
+.user__info {
+  text-align: center;
+}
+.user__name {
+  @include roboto($style: "medium");
+  font-size: 35px;
+  margin-bottom: 5px;
+  @include phones {
+    font-size: 21px;
+  }
+}
+.user__desc {
+  opacity: 0.8;
+}
+.hero__btn {
+  position: absolute;
+  top: 600px;
+  left: calc(50% - 10px);
+  z-index: 5;
+  cursor: pointer;
+}
+.arrow__down_pic {
+  width: 20px;
+  height: 20px;
+  fill: $white;
+  opacity: 0.6;
+  @include phones {
+    width: 25px;
+    height: 25px;
+  }
+}
+.hero__triangle-border::after {
+  content: "";
+  position: absolute;
+  top: 570px;
+  left: 0px;
+  border: 110px solid transparent;
+  border-left: calc(100vw / 2) solid $white;
+  border-right: calc(100vw / 2) solid $white;
+  border-bottom: 107px solid $white;
+  z-index: 3;
 }

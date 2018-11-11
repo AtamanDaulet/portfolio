@@ -1,154 +1,159 @@
-.feed__form{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 570px;
-    
+.feed__form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 570px;
 }
-.feed__form_wrapper  {
-    height: 440px;
-    width: 380px;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
-    overflow: hidden;
-    max-width: 420px;
-    position: relative;
-    @include phones{
-        width: 300px;
-    }
+.feed__form_wrapper {
+  height: 440px;
+  width: 380px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  overflow: hidden;
+  max-width: 420px;
+  position: relative;
+  @include phones {
+    width: 300px;
+  }
 }
-.feed__form_bg{
-    width: 100%;
-    height: 100%;
-    background: url('../../images/bg/work-feed.jpg');
-    filter: blur(8px);
-    background-size: cover;
-    position: absolute;
-    -webkit-filter: blur(8px);
+.feed__form_bg {
+  width: 100%;
+  height: 100%;
+  background: url("../images/bg/work-feed.jpg");
+  filter: blur(8px);
+  background-size: cover;
+  position: absolute;
+  -webkit-filter: blur(8px);
 }
-.form__title{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    height: 100px;
-    font-size: 35px;
-    @include bernier();
-    color: $grey;
-    z-index: 2;
+.form__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100px;
+  font-size: 35px;
+  @include bernier();
+  color: $grey;
+  z-index: 2;
 }
-.form__title_text{
-    position: relative;
+.form__title_text {
+  position: relative;
 }
 @include title-dash(".form__title_text");
 
-.form__author, .form__mail, .form__message{
-    position: relative;    
-    display: flex;
-    justify-content: center;    
-    @include phones{
-        width: 100%;
-    }
-}
-.form__author, .form__mail{
-    height: 65px;
-}
-.form__message{
-    height: 160px;
-}
-.form__author_name, .form__author_email, .form__author_msg{
-    position: relative;
-    display: flex;   
-    border: none;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
-    padding: 15px;
-    @include  roboto("regular") ;
-    opacity: 0.8;
-    
-}
-.form__author_name, .form__author_email{
-    width: 340px;
-    height: 45px;
-    @include phones{
-        width: 300px;
-    }
-}
-.form__author_msg{
-    width: 340px;
-    height: 140px;
-    @include phones{
-        width: 300px;
-    }
-}
-.form__btn{
-    display: flex;
-    width: 50%;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
+.form__author,
+.form__mail,
+.form__message {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  @include phones {
     width: 100%;
-    height: 45px;
+  }
 }
-.form__send, .form__clean{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    width: 50%;
+.form__author,
+.form__mail {
+  height: 65px;
 }
-.form__btn_custom{
-    width: 100%;
-    height: 100%;
-    color: $white;
-    background-color: $green; 
-    @include roboto($style: 'medium');
-    cursor: pointer;
-    border: 1px solid $green; 
+.form__message {
+  height: 160px;
 }
-.form__btn_custom:hover{
-    background-color: $green-hover;
-    border: 1px solid $green-hover; 
-};
-.form__send{
-    border-right: 1px solid rgba(255, 255, 255, .5); 
+.form__author_name,
+.form__author_email,
+.form__author_msg {
+  position: relative;
+  display: flex;
+  border: none;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  padding: 15px;
+  @include roboto("regular");
+  opacity: 0.8;
 }
-.form__clean{
-    border-left: 1px solid rgba(255, 255, 255, .5); 
+.form__author_name,
+.form__author_email {
+  width: 340px;
+  height: 45px;
+  @include phones {
+    width: 300px;
+  }
 }
-.work__arrow_up{
-    position: relative;   
-    width: 100%; 
-    border: none;
-    padding: 0px;
+.form__author_msg {
+  width: 340px;
+  height: 140px;
+  @include phones {
+    width: 300px;
+  }
 }
-.arrow_up__relative{
-    position: absolute;
+.form__btn {
+  display: flex;
+  width: 50%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 45px;
+}
+.form__send,
+.form__clean {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 50%;
+}
+.form__btn_custom {
+  width: 100%;
+  height: 100%;
+  color: $white;
+  background-color: $green;
+  @include roboto($style: "medium");
+  cursor: pointer;
+  border: 1px solid $green;
+}
+.form__btn_custom:hover {
+  background-color: $green-hover;
+  border: 1px solid $green-hover;
+}
+.form__send {
+  border-right: 1px solid rgba(255, 255, 255, 0.5);
+}
+.form__clean {
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+}
+.work__arrow_up {
+  position: relative;
+  width: 100%;
+  border: none;
+  padding: 0px;
+}
+.arrow_up__relative {
+  position: absolute;
+  top: -30px;
+  left: calc(50% - 10px);
+  @include tablets {
+    top: -20px;
+  }
+  @include phones {
     top: -30px;
-    left: calc(50% - 10px);
-    @include tablets{
-        top: -20px;     
-    }
-    @include phones{
-        top: -30px;
-    }
+  }
 }
-.arrow_up__svg{
-    width: 25px;
-    height: 25px;
-    fill:  $white;
-    opacity: 0.6;
-    cursor: pointer;
-    transform: rotate(180deg);
-    -webkit-transform: rotate(180deg);
-    -moz-transform: rotate(180deg);
-    -ms-transform: rotate(180deg);
-    -o-transform: rotate(180deg);
+.arrow_up__svg {
+  width: 25px;
+  height: 25px;
+  fill: $white;
+  opacity: 0.6;
+  cursor: pointer;
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
 }
