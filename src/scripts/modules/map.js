@@ -406,7 +406,7 @@ var marker; // eslint-disable-line no-unused-vars
   const myMap = new google.maps.Map(element, option);
 
   const image = {
-    url: "../images/map/map_marker.png",
+    url: "./images/map/map_marker.png",
     size: new google.maps.Size(30, 40)
   };
 
