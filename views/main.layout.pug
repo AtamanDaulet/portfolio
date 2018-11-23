@@ -8,9 +8,14 @@ html(lang="en")
     meta(content="ie=edge" http-equiv="x-ua-compatible")
     meta(content="width=device-width, initial-scale=1" name="viewport")
     meta(http-equiv="Content-Security-Policy" 
-    default-src = 'self' 
-    font-src = "'self' https://use.fontawesome.com"
-    script-src ="'self' https://maps.googleapis.com  https://fonts.googleapis.com ")
+    default-src = 'none'
+    connect-src = "'self'"
+    img-src = 'self'
+    font-src = "'self' https://use.fontawesome.com https://fonts.googleapis.com "
+    script-src ="'self' https://maps.googleapis.com "
+    style-src = 'self'
+    frame-ancestors = 'none')
+
     link(rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-touch-icon.png")
     link(rel="icon" type="image/png" sizes="32x32" href="./images/favicon/favicon-32x32.png")
     link(rel="icon" type="image/png" sizes="16x16" href="./images/favicon/favicon-16x16.png")
@@ -22,11 +27,12 @@ html(lang="en")
     script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBw6BYEWm9ft20VkdRBtctm5pTSccf52Ro")
 
     title #{title}
-
+    
     link(rel='stylesheet' href='./styles/main.min.css')
   body
-    .wrapper
-      include ./common/menu.pug
+    .wrapper      
+      include ./common/preloader
+      include ./common/menu
       .maincontent
         block content
 

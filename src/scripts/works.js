@@ -1,3 +1,4 @@
+import "./preloader";
 import "./modules/blur";
 import "./modules/parallax";
 import "./modules/menu-overlay";
