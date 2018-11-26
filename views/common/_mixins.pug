@@ -6,7 +6,7 @@ mixin image(imagePath, imageAlt, imageClass)
   img(src=`./images/${imagePath}`, alt=`${imageAlt}`, class=`${imageClass}`)
 
 mixin iconLink(iconLink, iconName, iconClass)
-  a(href=`${iconLink}` target="_blank")
+  a(href=`${iconLink}` target="_blank" title=`${iconClass}`)
     svg(class=`${iconClass}`)
       use(xlink:href=`./images/icons/sprite.svg#${iconName}`)
 
